@@ -17,6 +17,7 @@ package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
+import org.eclipse.emf.ecore.xmi.XMLLoad;
 import org.eclipse.emf.ecore.xmi.XMLSave;
 
 /**
@@ -37,6 +38,11 @@ public abstract class CimResourceImpl extends fr.centralesupelec.edf.riseclipse.
      */
     public CimResourceImpl( URI uri ) {
         super( uri );
+    }
+
+    @Override
+    protected XMLLoad createXMLLoad() {
+        return new CimXMLLoadImpl( createXMLHelper() );
     }
 
     @Override
