@@ -26,7 +26,7 @@ public class CimResourceHandler extends fr.centralesupelec.edf.riseclipse.cim.ut
 
     @Override
     public void preSave( XMLResource resource, OutputStream outputStream, Map< ?, ? > options ) {
-        super.preSave( resource, outputStream, options, CimConstants.cimURI );
+        super.preSave( resource, outputStream, options, CimConstants.cimURISharp );
     }
 
 }

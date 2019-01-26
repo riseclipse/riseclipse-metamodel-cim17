@@ -22,15 +22,15 @@ import org.eclipse.emf.ecore.xmi.XMLHelper;
 public class CimXMLSaveImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLSaveImpl {
     
     public CimXMLSaveImpl( XMLHelper helper ) {
-        super( CimConstants.cimURI, helper );
+        super( CimConstants.cimURISharp, helper );
     }
 
     public CimXMLSaveImpl( Map< ?, ? > options, XMLHelper helper, String encoding ) {
-        super( CimConstants.cimURI, options, helper, encoding );
+        super( CimConstants.cimURISharp, options, helper, encoding );
     }
 
     public CimXMLSaveImpl( Map< ?, ? > options, XMLHelper helper, String encoding, String xmlVersion ) {
-        super( CimConstants.cimURI, options, helper, encoding, xmlVersion );
+        super( CimConstants.cimURISharp, options, helper, encoding, xmlVersion );
     }
     
 }
