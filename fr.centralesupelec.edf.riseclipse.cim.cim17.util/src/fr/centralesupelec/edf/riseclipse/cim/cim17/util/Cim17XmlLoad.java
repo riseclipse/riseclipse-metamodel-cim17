@@ -15,12 +15,20 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
+import org.eclipse.emf.ecore.xmi.XMLHelper;
+import org.xml.sax.helpers.DefaultHandler;
 
-public class CimConstants extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimConstants {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimXmlLoad;
 
-    // CimPackage is specific to each concrete Cim17 metamodel, so we cannot get it here,
-    // but we prefer to have a generic Cim17 package
-    //public static final String cimURI = CimPackage.eNS_URI;
-    public static final String cimURI = "http://iec.ch/TC57/2016/CIM-schema-cim17";
-    public static final String cimURISharp = cimURI + "#";
+public class Cim17XmlLoad extends AbstractCimXmlLoad {
+
+    public Cim17XmlLoad( XMLHelper helper ) {
+        super( helper );
+    }
+
+    @Override
+    protected DefaultHandler makeDefaultHandler() {
+        return new Cim17XmlHandler( resource, helper, options );
+    }
+
 }

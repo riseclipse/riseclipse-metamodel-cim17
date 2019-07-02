@@ -19,9 +19,11 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
-public abstract class CimResourceSetFactory extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimResourceSetFactory {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimResourceSetFactory;
+
+public abstract class AbstractCim17ResourceSetFactory extends AbstractCimResourceSetFactory {
     
-    public CimResourceSetFactory() {
+    public AbstractCim17ResourceSetFactory() {
         super();
     }
 }

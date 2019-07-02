@@ -19,10 +19,11 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimResourceSet;
 
-public abstract class CimResourceSetImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimResourceSetImpl {
+public abstract class AbstractCim17ResourceSet extends AbstractCimResourceSet {
 
-    public CimResourceSetImpl( boolean strictContent ) {
+    public AbstractCim17ResourceSet( boolean strictContent ) {
         super( strictContent );
     }
 }

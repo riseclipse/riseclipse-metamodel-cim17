@@ -15,20 +15,15 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
-import fr.centralesupelec.edf.riseclipse.cim.cim17.util.CimResourceHandler;
+import fr.centralesupelec.edf.riseclipse.cim.cim17.util.Cim17ResourceHandler;
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimResourceFactory;
 
-/**
- * <!-- begin-user-doc -->
- * The <b>Resource Factory</b> associated with the package.
- * <!-- end-user-doc -->
- * @see fr.centralesupelec.edf.riseclipse.cim.cim17.iec61970cim17v16.cim.util.CimResourceImpl
- * @generated NOT
- */
-public abstract class CimResourceFactoryImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimResourceFactoryImpl {
+public abstract class Cim17ResourceFactory extends AbstractCimResourceFactory {
 
     @Override
-    protected CimResourceHandler createCimResourceHandler() {
-        return new CimResourceHandler();
+    protected Cim17ResourceHandler createCimResourceHandler() {
+        return new Cim17ResourceHandler();
     }
 
-} //CimResourceFactoryImpl
+}
+
