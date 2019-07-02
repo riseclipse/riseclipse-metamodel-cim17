@@ -18,7 +18,7 @@ package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 import fr.centralesupelec.edf.riseclipse.cim.cim17.util.Cim17ResourceHandler;
 import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimResourceFactory;
 
-public abstract class Cim17ResourceFactory extends AbstractCimResourceFactory {
+public abstract class AbstractCim17ResourceFactory extends AbstractCimResourceFactory {
 
     @Override
     protected Cim17ResourceHandler createCimResourceHandler() {
