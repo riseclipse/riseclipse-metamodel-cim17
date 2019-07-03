@@ -11,21 +11,19 @@
  *      Computer Science Department, CentraleSupélec : initial implementation
  *  Contacts:
  *      Dominique.Marcadet@centralesupelec.fr
+ * 
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
+import fr.centralesupelec.edf.riseclipse.cim.cim17.util.Cim17ResourceHandler;
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimResourceFactory;
 
-public class CimXMLHelperImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLHelperImpl {
-
-    public CimXMLHelperImpl( CimResourceImpl cimResourceImpl ) {
-        super( cimResourceImpl );
-    }
+public abstract class AbstractCim17ResourceFactory extends AbstractCimResourceFactory {
 
     @Override
-    public String getURI( String prefix ) {
-        String uri = super.getURI( prefix );
-        if( CimConstants.cimURISharp.equals( uri )) return CimConstants.cimURI;
-        return uri;
+    protected Cim17ResourceHandler createCimResourceHandler() {
+        return new Cim17ResourceHandler();
     }
 
 }
+

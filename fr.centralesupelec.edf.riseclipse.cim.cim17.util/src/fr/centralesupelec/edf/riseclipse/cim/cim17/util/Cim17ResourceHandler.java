@@ -15,22 +15,20 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
+import java.io.OutputStream;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.xmi.XMLHelper;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 
-public class CimXMLSaveImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLSaveImpl {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimResourceHandler;
+
+public class Cim17ResourceHandler extends AbstractCimResourceHandler {
     
-    public CimXMLSaveImpl( XMLHelper helper ) {
-        super( CimConstants.cimURISharp, helper );
+    static final String xmlDeclaration = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n";
+
+    @Override
+    public void preSave( XMLResource resource, OutputStream outputStream, Map< ?, ? > options ) {
+        super.preSave( resource, outputStream, options, Cim17Constants.cimURISharp );
     }
 
-    public CimXMLSaveImpl( Map< ?, ? > options, XMLHelper helper, String encoding ) {
-        super( CimConstants.cimURISharp, options, helper, encoding );
-    }
-
-    public CimXMLSaveImpl( Map< ?, ? > options, XMLHelper helper, String encoding, String xmlVersion ) {
-        super( CimConstants.cimURISharp, options, helper, encoding, xmlVersion );
-    }
-    
 }

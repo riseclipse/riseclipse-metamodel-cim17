@@ -15,8 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimConstants;
 
-public class CimConstants extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimConstants {
+public class Cim17Constants extends AbstractCimConstants {
 
     // CimPackage is specific to each concrete Cim17 metamodel, so we cannot get it here,
     // but we prefer to have a generic Cim17 package

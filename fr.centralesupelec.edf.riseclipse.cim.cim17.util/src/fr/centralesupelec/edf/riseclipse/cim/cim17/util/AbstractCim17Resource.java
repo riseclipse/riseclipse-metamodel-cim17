@@ -20,39 +20,28 @@ import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLLoad;
 import org.eclipse.emf.ecore.xmi.XMLSave;
 
-/**
- * <!-- begin-user-doc -->
- * The <b>Resource </b> associated with the package.
- * <!-- end-user-doc -->
- * @see fr.centralesupelec.edf.riseclipse.cim.cim17.iec61970cim17v16.cim.util.CimResourceFactoryImpl
- * @generated
- */
-public abstract class CimResourceImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimResourceImpl {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimResource;
 
-    /**
-     * Creates an instance of the resource.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param uri the URI of the new resource.
-     * @generated NOT
-     */
-    public CimResourceImpl( URI uri ) {
+
+public abstract class AbstractCim17Resource extends AbstractCimResource {
+
+    public AbstractCim17Resource( URI uri ) {
         super( uri );
     }
 
     @Override
     protected XMLLoad createXMLLoad() {
-        return new CimXMLLoadImpl( createXMLHelper() );
+        return new Cim17XmlLoad( createXMLHelper() );
     }
 
     @Override
     protected XMLSave createXMLSave() {
-        return new CimXMLSaveImpl( createXMLHelper() );
+        return new Cim17XmlSave( createXMLHelper() );
     }
 
     @Override
     protected XMLHelper createXMLHelper() {
-        return new CimXMLHelperImpl( this );
+        return new Cim17XmlHelper( this );
     }
 
-} // CimResourceImpl
+}

@@ -11,22 +11,22 @@
  *      Computer Science Department, CentraleSupélec : initial implementation
  *  Contacts:
  *      Dominique.Marcadet@centralesupelec.fr
- * 
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
-import org.eclipse.emf.ecore.xmi.XMLHelper;
-import org.xml.sax.helpers.DefaultHandler;
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimXmlHelper;
 
-public class CimXMLLoadImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimXMLLoadImpl {
+public class Cim17XmlHelper extends AbstractCimXmlHelper {
 
-    public CimXMLLoadImpl( XMLHelper helper ) {
-        super( helper );
+    public Cim17XmlHelper( AbstractCim17Resource abstractCim17Resource ) {
+        super( abstractCim17Resource );
     }
 
     @Override
-    protected DefaultHandler makeDefaultHandler() {
-        return new CimXMLHandler( resource, helper, options );
+    public String getURI( String prefix ) {
+        String uri = super.getURI( prefix );
+        if( Cim17Constants.cimURISharp.equals( uri )) return Cim17Constants.cimURI;
+        return uri;
     }
 
 }

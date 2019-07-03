@@ -15,20 +15,20 @@
  */
 package fr.centralesupelec.edf.riseclipse.cim.cim17.util;
 
-import fr.centralesupelec.edf.riseclipse.cim.cim17.util.CimResourceHandler;
+import org.eclipse.emf.ecore.xmi.XMLHelper;
+import org.xml.sax.helpers.DefaultHandler;
 
-/**
- * <!-- begin-user-doc -->
- * The <b>Resource Factory</b> associated with the package.
- * <!-- end-user-doc -->
- * @see fr.centralesupelec.edf.riseclipse.cim.cim17.iec61970cim17v16.cim.util.CimResourceImpl
- * @generated NOT
- */
-public abstract class CimResourceFactoryImpl extends fr.centralesupelec.edf.riseclipse.cim.util.cimxml.CimResourceFactoryImpl {
+import fr.centralesupelec.edf.riseclipse.cim.util.cimxml.AbstractCimXmlLoad;
 
-    @Override
-    protected CimResourceHandler createCimResourceHandler() {
-        return new CimResourceHandler();
+public class Cim17XmlLoad extends AbstractCimXmlLoad {
+
+    public Cim17XmlLoad( XMLHelper helper ) {
+        super( helper );
     }
 
-} //CimResourceFactoryImpl
+    @Override
+    protected DefaultHandler makeDefaultHandler() {
+        return new Cim17XmlHandler( resource, helper, options );
+    }
+
+}
